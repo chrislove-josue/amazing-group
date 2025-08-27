@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, PhoneCall } from "lucide-react";
+import { Menu, X, Handshake } from "lucide-react"; // <-- remplacé PhoneCall
 import { NAV_LINKS } from "../data/navLinks";
 
 export default function Navbar() {
@@ -19,6 +19,9 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
+            <a href="#contact" className="inline-flex items-center gap-2 rounded-xl bg-[#F15A29] text-white px-3 py-2 text-sm shadow">
+              <Handshake className="h-4 w-4" /> Partenariat & Collaboration
+            </a>
           </nav>
 
           <button aria-label="menu" onClick={() => setOpen(!open)} className="md:hidden p-2 rounded-lg border border-[#1C355E]/20">
@@ -35,7 +38,9 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-          
+            <a href="#contact" onClick={() => setOpen(false)} className="inline-flex items-center gap-2 rounded-xl bg-[#F15A29] text-white px-3 py-2 text-sm w-max">
+              <Handshake className="h-4 w-4" /> Partenariat & Collaboration
+            </a>
           </div>
         </div>
       )}
