@@ -6,7 +6,7 @@ import Contact from "./sections/Contact";
 import Projects from "./data/projects";
 import Testimonials from "./sections/Testimonials";
 import Team from "./data/Teams";
-
+import { Analytics } from "@vercel/analytics/react"
 export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F5F7FA] to-white text-[#1C355E]">
@@ -18,6 +18,7 @@ export default function App() {
       <Testimonials />
       <Contact />
       <Footer />
+      <Analytics />
     </div>
   );
 }
