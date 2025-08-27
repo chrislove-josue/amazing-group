@@ -10,7 +10,6 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex items-center justify-between h-16">
           <a href="#hero" className="flex items-center gap-2 font-bold text-lg md:text-xl text-[#1C355E]">
-            <span className="inline-block h-8 w-8 rounded-xl bg-[#1C355E] text-white grid place-items-center">AG</span>
             <span>AMAZING GROUP</span>
           </a>
 
@@ -20,9 +19,6 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a href="#contact" className="inline-flex items-center gap-2 rounded-xl bg-[#F15A29] text-white px-3 py-2 text-sm shadow">
-              <PhoneCall className="h-4 w-4" /> Devis gratuit
-            </a>
           </nav>
 
           <button aria-label="menu" onClick={() => setOpen(!open)} className="md:hidden p-2 rounded-lg border border-[#1C355E]/20">
@@ -39,9 +35,7 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a href="#contact" onClick={() => setOpen(false)} className="inline-flex items-center gap-2 rounded-xl bg-[#F15A29] text-white px-3 py-2 text-sm w-max">
-              <PhoneCall className="h-4 w-4" /> Devis gratuit
-            </a>
+          
           </div>
         </div>
       )}

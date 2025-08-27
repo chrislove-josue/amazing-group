@@ -24,18 +24,29 @@ const TESTIMONIALS = [
   },
 ];
 
+const PARTNERS = [
+  "https://picsum.photos/150/80?random=41",
+  "https://picsum.photos/150/80?random=42",
+  "https://picsum.photos/150/80?random=43",
+  "https://picsum.photos/150/80?random=44",
+  "https://picsum.photos/150/80?random=45",
+  "https://picsum.photos/150/80?random=46",
+];
+
 export default function Testimonials() {
   return (
     <section id="testimonials" className="py-16 md:py-24 bg-[#F5F7FA]">
       <div className="mx-auto max-w-7xl px-4 md:px-6 text-center">
+        {/* --- Témoignages --- */}
         <h2 className="text-3xl md:text-4xl font-bold text-[#1C355E] mb-4">
           Ce que disent nos clients
         </h2>
         <p className="text-gray-600 mb-12 max-w-3xl mx-auto">
-          Des retours authentiques et enthousiastes de nos clients qui témoignent de notre expertise et de notre engagement.
+          Des retours authentiques et enthousiastes de nos clients qui
+          témoignent de notre expertise et de notre engagement.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {TESTIMONIALS.map((t, idx) => (
             <motion.div
               key={t.name}
@@ -53,12 +64,40 @@ export default function Testimonials() {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div className="text-left">
-                  <h4 className="text-sm font-semibold text-[#1C355E]">{t.name}</h4>
+                  <h4 className="text-sm font-semibold text-[#1C355E]">
+                    {t.name}
+                  </h4>
                   <p className="text-xs text-[#F15A29]">{t.role}</p>
                 </div>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* --- Partenaires (Carousel) --- */}
+        <h3 className="text-2xl font-semibold text-[#1C355E] mb-8">
+          Nos partenaires de confiance
+        </h3>
+        <div className="overflow-hidden relative">
+          <motion.div
+            className="flex gap-8"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 30,
+              ease: "linear",
+            }}
+          >
+            {[...PARTNERS, ...PARTNERS].map((logo, i) => (
+              <div key={i} className="flex-shrink-0">
+                <img
+                  src={logo}
+                  alt={`Partenaire ${i}`}
+                  className="h-16 w-auto object-contain transition"
+                />
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

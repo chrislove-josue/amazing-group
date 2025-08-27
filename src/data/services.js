@@ -1,11 +1,12 @@
 import { Hammer, Megaphone, ShoppingBag, Truck, CalendarDays } from "lucide-react";
 
 export const SERVICES = [
+ 
   {
-    title: "Travaux de construction",
-    icon: Hammer,
-    desc: "Nous réalisons vos projets de A à Z : bâtiments modernes, génie civil complexe, rénovations méticuleuses. Chaque chantier est supervisé pour garantir une qualité irréprochable.",
-    bullets: ["Études & devis personnalisés", "Exécution clé en main et rapide", "Maintenance proactive & SAV réactif"],
+    title: "Événementiel",
+    icon: CalendarDays,
+    desc: "Faites vivre des expériences inoubliables : événements corporate ou grand public, conçus avec créativité et précision.",
+    bullets: ["Scénographie immersive et originale", "Location technique & équipements haut de gamme", "Staff professionnel et sécurité assurée"],
   },
   {
     title: "Publicité & Communication",
@@ -24,11 +25,10 @@ export const SERVICES = [
     icon: Truck,
     desc: "Livraison sécurisée, traçabilité complète et rapidité garantie. Nous assurons le transport routier et la messagerie avec une fiabilité exceptionnelle.",
     bullets: ["Livraison B2B et B2C optimisée", "Flotte modernisée avec suivi GPS", "Couverture nationale et services personnalisés"],
-  },
-  {
-    title: "Événementiel",
-    icon: CalendarDays,
-    desc: "Faites vivre des expériences inoubliables : événements corporate ou grand public, conçus avec créativité et précision.",
-    bullets: ["Scénographie immersive et originale", "Location technique & équipements haut de gamme", "Staff professionnel et sécurité assurée"],
+  },  {
+    title: "Travaux de construction",
+    icon: Hammer,
+    desc: "Nous réalisons vos projets de A à Z : bâtiments modernes, génie civil complexe, rénovations méticuleuses. Chaque chantier est supervisé pour garantir une qualité irréprochable.",
+    bullets: ["Études & devis personnalisés", "Exécution clé en main et rapide", "Maintenance proactive & SAV réactif"],
   },
 ];

@@ -4,7 +4,10 @@ import { ChevronRight, ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="hero" className="pt-28 md:pt-36 pb-16 md:pb-24 relative overflow-hidden bg-[#F5F7FA]">
+    <section
+      id="hero"
+      className="pt-28 md:pt-36 pb-16 md:pb-24 relative overflow-hidden bg-[#F5F7FA]"
+    >
       <div className="mx-auto max-w-7xl px-4 md:px-6 grid md:grid-cols-2 gap-10 items-center">
         {/* Texte et boutons */}
         <motion.div
@@ -14,18 +17,32 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <Badge>
-            <span className="h-2 w-2 rounded-full bg-[#F15A29]" /> Entreprise pluri-sectorielle
+            <span className="h-2 w-2 rounded-full bg-[#F15A29]" /> Entreprise
+            pluri-sectorielle
           </Badge>
+
           <h1 className="mt-4 text-3xl md:text-5xl font-semibold leading-tight">
-            AMAZING GROUP<br />
+            AMAZING GROUP
+            <br />
             <span className="text-[#7A7A7A] text-lg md:text-xl">
-              Construction · Publicité · Commerce · Transport · Événementiel
+              Publicité · Événementiel · Commerce · Transport · Construction
             </span>
           </h1>
-          <p className="mt-4 text-[#7A7A7A] text-sm md:text-base">
-            Un seul partenaire, cinq expertises. Nous concevons, bâtissons, promouvons et livrons avec exigence et sens du résultat.
+
+          {/* ✅ Slogan ajouté */}
+          <p className="mt-3 text-[#1C355E] text-base md:text-lg font-semibold">
+            « Un seul groupe, toutes vos réussites. »
           </p>
 
+          {/* ✅ Texte plus impactant */}
+          <p className="mt-4 text-[#7A7A7A] text-sm md:text-base">
+            De la créativité à la construction, du transport à la promotion :{" "}
+            <span className="text-[#1C355E] font-medium">
+              nous concevons, bâtissons et livrons avec exigence et résultats.
+            </span>
+          </p>
+
+          {/* CTA */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -43,19 +60,31 @@ export default function Hero() {
             </motion.a>
           </div>
 
-          {/* Statistiques rapides */}
+          {/* ✅ Stats corrigées */}
           <div className="mt-10 grid grid-cols-3 gap-4 text-center">
             <div>
-              <span className="block text-2xl md:text-3xl font-bold text-[#F15A29]">5+</span>
-              <span className="block text-sm text-[#7A7A7A]">Années d'expérience</span>
+              <span className="block text-2xl md:text-3xl font-bold text-[#F15A29]">
+                5+
+              </span>
+              <span className="block text-sm text-[#7A7A7A]">
+                Années d'expérience
+              </span>
             </div>
             <div>
-              <span className="block text-2xl md:text-3xl font-bold text-[#F15A29]">50+</span>
-              <span className="block text-sm text-[#7A7A7A]">Projets réalisés</span>
+              <span className="block text-2xl md:text-3xl font-bold text-[#F15A29]">
+                50+
+              </span>
+              <span className="block text-sm text-[#7A7A7A]">
+                Projets réalisés
+              </span>
             </div>
             <div>
-              <span className="block text-2xl md:text-3xl font-bold text-[#F15A7F]">100%</span>
-              <span className="block text-sm text-[#7A7A7A]">Clients satisfaits</span>
+              <span className="block text-2xl md:text-3xl font-bold text-[#F15A29]">
+                100%
+              </span>
+              <span className="block text-sm text-[#7A7A7A]">
+                Clients satisfaits
+              </span>
             </div>
           </div>
         </motion.div>

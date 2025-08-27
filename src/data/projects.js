@@ -118,7 +118,7 @@ export default function Projects() {
                       key={i}
                       src={img}
                       alt={`Gallery ${i}`}
-                      className="h-24 w-32 object-cover rounded-xl flex-shrink-0"
+                      className="h-32 w-40 object-cover rounded-xl flex-shrink-0"
                     />
                   ))}
                 </div>
