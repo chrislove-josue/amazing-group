@@ -36,6 +36,10 @@ export default function Contact() {
       newErrors.email = "Veuillez saisir un email valide.";
     }
 
+    if (!form.projectType || form.projectType.length < 3) {
+      newErrors.projectType = "Le type de projet est obligatoire (au moins 3 caractères).";
+    }
+
     if (!form.message || form.message.length < 6) {
       newErrors.message = "Le message doit contenir au moins 6 caractères.";
     }
@@ -65,6 +69,14 @@ export default function Contact() {
       message: "",
     });
   };
+
+  // Vérifie si tous les champs obligatoires sont valides
+  const isFormValid =
+    form.name.length >= 6 &&
+    form.phone.length >= 6 &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) &&
+    form.projectType.length >= 3 &&
+    form.message.length >= 6;
 
   return (
     <section id="contact" className="py-16 md:py-24 bg-[#F5F7FA]">
@@ -143,14 +155,18 @@ export default function Contact() {
               </div>
 
               {/* Type de projet */}
-              <input
-                name="projectType"
-                value={form.projectType}
-                onChange={handleChange}
-                type="text"
-                placeholder="Type de projet / collaboration"
-                className="rounded-xl border border-[#1C355E]/20 px-3 py-2"
-              />
+              <div>
+                <input
+                  name="projectType"
+                  value={form.projectType}
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Type de projet / collaboration"
+                  className="rounded-xl border border-[#1C355E]/20 px-3 py-2 w-full"
+                  required
+                />
+                {errors.projectType && <p className="text-red-500 text-xs mt-1">{errors.projectType}</p>}
+              </div>
 
               {/* Budget */}
               <input
@@ -186,28 +202,38 @@ export default function Contact() {
                   {/* Bouton formulaire classique */}
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#F15A29] text-white px-4 py-2 text-sm"
+                    disabled={!isFormValid}
+                    className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm transition ${
+                      isFormValid
+                        ? "bg-[#F15A29] text-white"
+                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    }`}
                   >
                     Envoyer <ArrowUpRight className="h-4 w-4" />
                   </button>
 
                   {/* Bouton WhatsApp */}
-                  <a
-                    href={`https://wa.me/22998123353?text=Bonjour%20Amazing%20Group,%20je%20suis%20${encodeURIComponent(
-                      form.name
-                    )}%20(${encodeURIComponent(form.phone)}),%20Email:%20${encodeURIComponent(
-                      form.email
-                    )}.%20Projet:%20${encodeURIComponent(
-                      form.projectType
-                    )}.%20Budget:%20${encodeURIComponent(
-                      form.budget
-                    )}.%20Message:%20${encodeURIComponent(form.message)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-green-500 text-white px-4 py-2 text-sm"
-                  >
-                    WhatsApp
-                  </a>
+                 <a
+  href={`https://wa.me/22998123353?text=${encodeURIComponent(
+    `Bonjour Amazing Group,\n\n` +
+    `Je suis ${form.name}.\n` +
+    `Téléphone: ${form.phone}\n` +
+    `Email: ${form.email}\n` +
+    `Projet: ${form.projectType}\n` +
+    `Budget: ${form.budget}\n` +
+    `Message: ${form.message}`
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm transition ${
+    isFormValid
+      ? "bg-green-500 text-white"
+      : "bg-gray-300 text-gray-500 cursor-not-allowed pointer-events-none"
+  }`}
+>
+  WhatsApp
+</a>
+
                 </div>
               </div>
             </form>
