@@ -49,7 +49,7 @@ export default function Team() {
               <img
                 src={member.photo}
                 alt={member.name}
-                className="w-24 h-24 mx-auto rounded-full object-cover mb-4"
+                className="w-42 h-42 mx-auto rounded-full object-cover mb-4"
               />
               <h3 className="text-lg font-semibold text-[#1C355E]">{member.name}</h3>
               <p className="text-sm text-[#F15A29] mb-2">{member.role}</p>

@@ -61,7 +61,7 @@ export default function Testimonials() {
                 <img
                   src={t.photo}
                   alt={t.name}
-                  className="w-12 h-12 rounded-full object-cover"
+                  className="w-16 h-16 rounded-full object-cover"
                 />
                 <div className="text-left">
                   <h4 className="text-sm font-semibold text-[#1C355E]">
