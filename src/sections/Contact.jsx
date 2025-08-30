@@ -192,12 +192,12 @@ export default function Contact() {
                 {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
               </div>
 
-              {/* Footer formulaire */}
-              <div className="flex items-center justify-between">
-                <div className="text-xs text-[#7A7A7A]">
+<div className="text-xs text-[#7A7A7A]">
                   En cliquant sur « Envoyer », vous acceptez notre politique de confidentialité.
                 </div>
-
+              {/* Footer formulaire */}
+              <div className="flex items-center justify-between">
+                
                 <div className="flex gap-2">
                   {/* Bouton formulaire classique */}
                   <button
@@ -235,6 +235,7 @@ export default function Contact() {
 </a>
 
                 </div>
+                
               </div>
             </form>
           </div>

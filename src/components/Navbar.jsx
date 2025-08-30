@@ -1,17 +1,21 @@
 import { useState } from "react";
-import { Menu, X, Handshake } from "lucide-react"; // <-- remplacé PhoneCall
+import { Menu, X, Handshake } from "lucide-react";
 import { NAV_LINKS } from "../data/navLinks";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 border-b border-[#1C355E]/10 bg-white/90 backdrop-blur">
-      <div className="mx-auto max-w-7xl px-4 md:px-6">
+    <header className="fixed top-0 inset-x-0 z-50 bg-[#1C355E]/5 backdrop-blur">
+      <div className="mx-auto max-w-7xl px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="#hero" className="flex items-center gap-2 font-bold text-lg md:text-xl text-[#1C355E]">
-            <span>AMAZING GROUP</span>
-          </a>
+         <a href="#hero" className="flex items-center">
+  <img
+    src="/logo_amazing_group.jpg"
+    alt="Logo Amazing Group"
+    className="h-14 md:h-12 w-auto object-contain"
+  />
+</a>
 
           <nav className="hidden md:flex items-center gap-6 text-sm">
             {NAV_LINKS.map((l) => (
